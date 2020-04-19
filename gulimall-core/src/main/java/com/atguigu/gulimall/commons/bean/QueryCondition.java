@@ -24,4 +24,55 @@ public class QueryCondition {
 
     @ApiModelProperty(name = "asc",value = "系统默认排序",required = false)
     private String asc = "asc";
+
+    public Long getPage() {
+        return page;
+    }
+
+    public void setPage(Long page) {
+        this.page = page;
+    }
+
+    public Long getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Long limit) {
+        this.limit = limit;
+    }
+
+    public String getSidx() {
+        return sidx;
+    }
+
+    public void setSidx(String sidx) {
+        this.sidx = sidx;
+    }
+
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    public String getAsc() {
+        return asc;
+    }
+
+    public void setAsc(String asc) {
+        this.asc = asc;
+    }
+
+    @Override
+    public String toString() {
+        return "QueryCondition{" +
+                "page=" + page +
+                ", limit=" + limit +
+                ", sidx='" + sidx + '\'' +
+                ", order='" + order + '\'' +
+                ", asc='" + asc + '\'' +
+                '}';
+    }
 }
