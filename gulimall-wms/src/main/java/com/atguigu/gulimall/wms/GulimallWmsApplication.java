@@ -1,4 +1,4 @@
-package com.atguigu.gulimallwms;
+package com.atguigu.gulimall.wms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
