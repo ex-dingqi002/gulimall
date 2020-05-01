@@ -13,7 +13,7 @@
 
     <properties>
         <mybatisplus.version>3.0.7.1</mybatisplus.version>
-        <nacos.version>0.2.2.RELEASE</nacos.version>
+        <nacos.version>0.2.1.RELEASE</nacos.version>
         <mybatisplus.version>3.0.7.1</mybatisplus.version>
         <mysql.version>5.1.47</mysql.version>
         <swagger.version>2.9.2</swagger.version>
