@@ -16,5 +16,11 @@ import com.atguigu.gulimall.commons.bean.QueryCondition;
 public interface SpuInfoService extends IService<SpuInfoEntity> {
 
     PageVo queryPage(QueryCondition params);
+
+    PageVo queryGoods(QueryCondition queryCondition, Integer catId);
+
+    void updateStatus(Integer status, Integer[] spuIds);
+
+    void updateStatus1(Integer status, Integer spuId);
 }
 

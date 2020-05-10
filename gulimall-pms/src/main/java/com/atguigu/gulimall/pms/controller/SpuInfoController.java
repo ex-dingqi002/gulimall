@@ -33,6 +33,30 @@ public class SpuInfoController {
     @Autowired
     private SpuInfoService spuInfoService;
 
+    @ApiOperation("商品上架、下架")
+    @PostMapping("/updateStatus/{spuId}")
+    public Resp<Object> updateStatus1(@RequestParam Integer status,@RequestParam Integer spuId){
+        spuInfoService.updateStatus1(status,spuId);
+        return Resp.ok(null);
+    }
+
+    @ApiOperation("批量上架、下架商品")
+    @PostMapping("/batch/updateStatus")
+    public Resp<Object> updateStatus2(@RequestParam Integer status,@RequestParam Integer[] spuIds){
+        spuInfoService.updateStatus(status,spuIds);
+        return Resp.ok(null);
+    }
+
+
+    @ApiOperation("按照spuid,spuname,分类id检索商品")
+    @GetMapping("/simple/search")
+    public Resp<Object> GetGood(QueryCondition queryCondition,@RequestParam Integer catId){
+        PageVo page = spuInfoService.queryGoods(queryCondition,catId);
+        return Resp.ok(page);
+    }
+
+
+
     /**
      * 列表
      */

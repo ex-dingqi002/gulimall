@@ -27,19 +27,19 @@ public class PageVo implements Serializable {
 	/**
 	 * 总记录数
 	 */
-	private int totalCount;
+	private Long totalCount;
 	/**
 	 * 每页记录数
 	 */
-	private int pageSize;
+	private Long pageSize;
 	/**
 	 * 总页数
 	 */
-	private int totalPage;
+	private Long totalPage;
 	/**
 	 * 当前页数
 	 */
-	private int currPage;
+	private Long currPage;
 	/**
 	 * 列表数据
 	 */
@@ -52,12 +52,12 @@ public class PageVo implements Serializable {
 	 * @param pageSize    每页记录数
 	 * @param currPage    当前页数
 	 */
-	public PageVo(List<?> list, int totalCount, int pageSize, int currPage) {
+	public PageVo(List<?> list, Long totalCount, Long pageSize, Long currPage) {
 		this.list = list;
 		this.totalCount = totalCount;
 		this.pageSize = pageSize;
 		this.currPage = currPage;
-		this.totalPage = (int)Math.ceil((double)totalCount/pageSize);
+		this.totalPage = (long)Math.ceil((double)totalCount/pageSize);
 	}
 
 	/**
@@ -65,12 +65,54 @@ public class PageVo implements Serializable {
 	 */
 	public PageVo(IPage<?> page) {
 		this.list = page.getRecords();
-		this.totalCount = (int)page.getTotal();
-		this.pageSize = (int)page.getSize();
-		this.currPage = (int)page.getCurrent();
-		this.totalPage = (int)page.getPages();
+		this.totalCount = (Long)page.getTotal();
+		this.pageSize = (Long)page.getSize();
+		this.currPage = (Long)page.getCurrent();
+		this.totalPage = (Long)page.getPages();
 	}
 
 
-	
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public Long getTotalCount() {
+		return totalCount;
+	}
+
+	public void setTotalCount(Long totalCount) {
+		this.totalCount = totalCount;
+	}
+
+	public Long getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Long pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Long getTotalPage() {
+		return totalPage;
+	}
+
+	public void setTotalPage(Long totalPage) {
+		this.totalPage = totalPage;
+	}
+
+	public Long getCurrPage() {
+		return currPage;
+	}
+
+	public void setCurrPage(Long currPage) {
+		this.currPage = currPage;
+	}
+
+	public List<?> getList() {
+		return list;
+	}
+
+	public void setList(List<?> list) {
+		this.list = list;
+	}
 }

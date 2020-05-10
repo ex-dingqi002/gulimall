@@ -25,6 +25,9 @@ public class QueryCondition {
     @ApiModelProperty(name = "asc",value = "系统默认排序",required = false)
     private String asc = "asc";
 
+    @ApiModelProperty(name = "key",value = "检索条件",required = false)
+    private String key = "";
+
     public Long getPage() {
         return page;
     }
@@ -74,5 +77,13 @@ public class QueryCondition {
                 ", order='" + order + '\'' +
                 ", asc='" + asc + '\'' +
                 '}';
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
