@@ -1,12 +1,14 @@
 package com.atguigu.gulimall.pms.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
 import com.atguigu.gulimall.commons.bean.PageVo;
 import com.atguigu.gulimall.commons.bean.QueryCondition;
 import com.atguigu.gulimall.commons.bean.Resp;
+import com.atguigu.gulimall.pms.entity.AttersAndGroupEntity;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,50 @@ import com.atguigu.gulimall.pms.service.AttrService;
 public class AttrController {
     @Autowired
     private AttrService attrService;
+
+    @ApiOperation("保存属性")
+    @PostMapping("/save1")
+    public Resp<Object> saveAttrEntity(@RequestBody AttrEntity param) {
+        attrService.saveAttrEntity(param);
+
+        return Resp.ok("OK");
+    }
+
+
+
+
+
+    @ApiOperation("查出某个属性，以及这个属性所属的分组信息")
+    @GetMapping("/info1/{attrId}")
+    public Resp<AttersAndGroupEntity> queryGroupAndAttrs(@PathVariable Integer attrId) {
+        AttersAndGroupEntity attersAndGroupEntities = attrService.queryGroupAndAttrs(attrId);
+
+        return Resp.ok(attersAndGroupEntities);
+    }
+
+
+
+
+    @ApiOperation("查询某个分组下对应的所有属性")
+    @GetMapping("/group/list/{groupId}")
+    public Resp<PageVo> queryGroupId(QueryCondition queryCondition,@PathVariable Integer groupId) {
+        PageVo pageVo = attrService.queryqueryGroupId(queryCondition, groupId);
+
+        return Resp.ok(pageVo);
+    }
+
+
+
+
+    @ApiOperation("查询某个三级分类下的所有基本属性")
+    @GetMapping("/base/{catId}")
+    public Resp<PageVo> queryBaseAttrs(QueryCondition queryCondition,@PathVariable Integer catId) {
+        PageVo pageVo = attrService.queryBaseAttrs(queryCondition, catId);
+
+        return Resp.ok(pageVo);
+    }
+
+
 
     /**
      * 列表

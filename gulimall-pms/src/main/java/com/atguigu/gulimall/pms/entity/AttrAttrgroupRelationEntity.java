@@ -43,4 +43,39 @@ public class AttrAttrgroupRelationEntity implements Serializable {
 	@ApiModelProperty(name = "attrSort",value = "属性组内排序")
 	private Integer attrSort;
 
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getAttrId() {
+		return attrId;
+	}
+
+	public void setAttrId(Long attrId) {
+		this.attrId = attrId;
+	}
+
+	public Long getAttrGroupId() {
+		return attrGroupId;
+	}
+
+	public void setAttrGroupId(Long attrGroupId) {
+		this.attrGroupId = attrGroupId;
+	}
+
+	public Integer getAttrSort() {
+		return attrSort;
+	}
+
+	public void setAttrSort(Integer attrSort) {
+		this.attrSort = attrSort;
+	}
 }
